@@ -6,9 +6,23 @@
     //Contudo, caso o aluno que ajudou (TUTOR) obteve maior nota, bonifique-o com um adicional de 10% da nota do aluno ajudado, e o programa apresentará a mensagem "CONTINUE ENSINANDO!" e também apresentará a nota final do aluno que ajudou (TUTOR).
 
     //ENTRADA
+    let tutor = Number (prompt ("Informe a nota que um Tutor tirou na prova").trim().replace(",", "."));
+    let aprendiz = Number (prompt("Informe a nota do aprendiz").trim().replace(",", "."));
 
 
     //PROCESSAMENTO
+    if (aprendiz > tutor){
+        alert(`CRIA MAIOR QUE O CRIADOR, o aprendiz teve ${aprendiz.toFixed(2)} de nota, enquanto o tutor teve ${tutor.toFixed(2)}`.replace(".", ","))
+    }
+    else if (tutor>aprendiz) {
+        alert(`CONTINUE ENSINANDO! O Tutor tirou ${tutor.toFixed(2)} enquanto o aprendiz tirou ${aprendiz.toFixed(2)}. com isso, a nota do tutor será bonificada em 10% da nota do aprendiz, que será ${tutor + aprendiz/10}`.replace(".", ","))
+    }
+    else if (tutor = aprendiz) {
+        alert(`DE IGUAL PRA IGUAL, os dois tiraram a mesma nota, que é ${(aprendiz+tutor)/2 .toFixed(2)}`.replace(".", ","))
+    }
+    else {
+        alert(`Valor Inválido!`)
+    }
 
 
     //SAÍDA
